@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Stopwatch App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- container1 -->
+  <div class="container1">
+    <div class="number">
+      <p id="min">00</p>
+      <span>m</span>
+    </div>
+    <div class="number">
+      <p id="sec">00</p>
+      <span>s</span>
+    </div>
+    <div class="number">
+      <p id="milli">00</p>
+      <span id="decimal">0</span>
+      <span id="ms">ms</span>
+    </div>
+  </div>
+  <!-- /container1 -->
+
+  <!-- container2 -->
+  <div class="container2">
+    <button id="startContinueBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+    <button id="resetBtn" disabled>Reset</button>
+  </div>
+  <!-- /container2 -->
+
+  <script src="script.js"></script>
+</body>
+</html>
