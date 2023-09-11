@@ -1,5 +1,3 @@
-
-
 # StopwatchJS
 
 Simple stopwatch app built with JS. 
