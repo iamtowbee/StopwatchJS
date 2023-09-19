@@ -5,17 +5,15 @@ const deciEl = document.getElementById("decimal");
 
 const startContinueBtn = {
   el: document.querySelector('#startContinueBtn'),
-  toggleText: function ()
-  {
+  toggleText : function () {
     isContinue ? this.el.innerText = "Continue" : this.el.innerText = "Start"
   },
-  toggleBtn: function (el)
-  {
+  toggleBtn : function(el) {
     el.removeAttribute("disabled");
   }
 };
 const stopBtn = document.querySelector('#stopBtn');
-const resetBtn = document.querySelector('#resetBtn');
+const resetBtn = document.querySelector('#resetBtn'); 
 
 let milliFormat = 0;
 let millis = 0;
@@ -23,6 +21,7 @@ let secFormat = 0;
 let seconds = 0;
 let minFormat = 0;
 let minutes = 0;
+let deciFormat;
 let interval;
 let isContinue = false;
 
@@ -51,28 +50,24 @@ function startTimer()
     minutes++;
   }
 
-  if (seconds < 10)
-  {
+  if (seconds < 10) {
     secFormat = "0" + seconds;
-  } else
-  {
+  } else {
     secFormat = seconds;
   }
 
-  if (minutes < 10)
-  {
+  if (minutes < 10) {
     minFormat = "0" + minutes;
   } else
   {
     minFormat = minutes;
   }
-
+  
   milliFormat = millis;
   milliFormat = Math.floor(milliFormat / 10);
   deciFormat = milliFormat % 10;
 
-  if (milliFormat < 10)
-  {
+  if (milliFormat < 10) {
     milliFormat = "0" + milliFormat;
   }
 
@@ -89,7 +84,7 @@ stopBtn.addEventListener('click', () =>
   startContinueBtn.toggleText();
 });
 
-function checkStop()
+function checkStop ()
 {
   if ((millis > 0 || seconds > 0 || minutes > 0))
   {
@@ -98,13 +93,14 @@ function checkStop()
   }
 }
 
-function resetTimer() 
+function resetTimer () 
 {
   clearInterval(interval);
-  millis = seconds = minutes = 0;
+  millis = seconds = minutes = deciFormat = 0;
   milliEl.innerText = "00";
   secEl.innerText = "00";
   minEl.innerText = "00";
+  deciEl.innerText = "0";
   isContinue = false;
   startContinueBtn.toggleText();
   startContinueBtn.toggleBtn(startContinueBtn.el);
