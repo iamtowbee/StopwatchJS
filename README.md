@@ -2,6 +2,10 @@
 
 Simple stopwatch app built with JS. 
 
+![Image Preview](bg.jpg)
+
+[Live Demo](https://stopwatchapp.iamtowbee.repl.co/)
+
 ## Features
 
 - Minutes, seconds, and milliseconds display
